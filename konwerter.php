@@ -17,8 +17,62 @@ public $data = [
 
 
 		];
+
+		 public function convert20($int){
+
+			return $this->data[$int];
+										}
+
+
+		 public function convert99($int){
+
+				$modulo=0;
+                $decimal=0;
+				$modulo= $int % 10 ;
+				if ($int==0  || $int<21) return $this->data[$int]; else{
+					$decimal = intval($int/10)*10 ;    $modulo = $int % 10;
+					
+					return $this->data[$decimal] . ' ' . $this->data[$modulo];
+				} 
+  		         }
+  		         public function convert999($int){
+  					
+  					$decimal= $int%100;
+  					
+  					$hundredsof=intval($int/100) *100;
+  					if($int==100) return $this->data[100]; else {
+  						return $this->data[$hundredsof]. ' ' . $this->convert99($decimal);
+  					}
+  				}
+
+  				public function convert_all($int){
+
+  					switch ($int) {
+  						case ($int <21):
+  							 return $this->convert20($int);
+  							break;
+  						
+  						case ($int<100):
+  							return $this->convert99($int);
+  							break;
+  						case ($int<1000):
+  						    return $this->convert999($int);
+  						    break;
+  						 default:
+  						  return  "Error int";
+  						  break;   	
+  					}
+
+
+
+
+  				}
 	
 
 
 
 }
+//test
+$konwerter = new Konwerter();
+
+echo $konwerter->convert_all(234);
