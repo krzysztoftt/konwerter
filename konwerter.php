@@ -67,12 +67,54 @@ public $data = [
 
 
   				}
+
+  				public function m($int){
+
+				
+				$str='';
+				switch ($int) {
+					case '0':
+						$str='';
+						break;
+					case '1':
+
+						$str='MILION';
+						break;
+					
+					case ($int >1 && $int <5):
+							$str= 'MILIONY';
+							break;	
+					case ($int>4):
+							$str = 'MILIONÓW';
+						break;
+				}
+
+
+
+			}
+
+
+
+			function change($int){
+
+
+               $m =  intval($int / 1000000);
+               $int = $int % 1000000;
+               $t = intval($int / 1000);
+               $int = $int % 1000;
+               $s = intval($int / 100);
+               $int = $int % 100;
+               $dz = intval($int / 10);
+               $j =  $int % 10;
+
+
+
+				return [$m,$t,$s,$dz,$j];
+
+			}
 	
 
 
 
 }
 //test
-$konwerter = new Konwerter();
-
-echo $konwerter->convert_all(234);
