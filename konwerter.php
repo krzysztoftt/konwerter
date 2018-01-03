@@ -93,6 +93,31 @@ public $data = [
 
 			}
 
+			public function t($int){
+
+				
+				$str='';
+				switch ($int) {
+					case '0':
+						$str='';
+						break;
+					case '1':
+
+						$str='TYSIĄC';
+						break;
+					
+					case ($int >1 && $int <5):
+							$str= 'TYSIĄCE';
+							break;	
+					case ($int>4):
+							$str = 'TYSIĘCY';
+						break;
+				}
+
+
+
+			}
+
 
 
 			function change($int){
