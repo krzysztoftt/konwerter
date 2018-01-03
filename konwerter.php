@@ -58,8 +58,7 @@ public $data = [
   						case ($int<1000):
   						    return $this->convert999($int);
   						    break;
-  						 default:
-  						  return  "Error int";
+  					// debug	 default: return  "Error int";
   						  break;   	
   					}
 
@@ -89,7 +88,7 @@ public $data = [
 						break;
 				}
 
-
+					return $str;
 
 			}
 
@@ -114,7 +113,7 @@ public $data = [
 						break;
 				}
 
-
+                  return $str;
 
 			}
 
@@ -137,9 +136,27 @@ public $data = [
 				return [$m,$t,$s,$dz,$j];
 
 			}
+
+
+			function konwert($int){
+                  
+                  if (!is_int($int)) { return "Error int";} elseif ($int==0) {
+                  	return "ZERO";
+                  } else
+
+				$liczby = $this->change($int);
+				$str ='';
+
+				$str = $this->convert_all($liczby[0]) . ' '. $this->m($liczby[0]) . ' ' . $this->convert_all($liczby[1]) . ' '. $this->t($liczby[1]) . ' ' . $this->data[$liczby[2]*100] . ' ' . $this->data[$liczby[3]*10] . ' ' . $this->data[$liczby[4]];
+				
+
+				return trim($str);
+
+
+			}
 	
 
 
 
 }
-//test
+
