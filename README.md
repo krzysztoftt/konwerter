@@ -1,3 +1,5 @@
+#
+
 ##KONWERTER
 
 Biblioteka zamienia liczb na Słowa
