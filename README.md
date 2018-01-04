@@ -1,14 +1,14 @@
 #
 
-##KONWERTER
+## KONWERTER
 
 Biblioteka zamienia liczb na Słowa
 
 
 ## example
 
-#
-<?php
+
+
 include 'konwerter.php';
 $konwerter = new Konwerter();
 
@@ -22,6 +22,7 @@ for ($i=0; $i < 50 ; $i++) {
 
 --------------------------------------------
 #OUTPUT:
+<br>
 
 
 
