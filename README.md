@@ -7,7 +7,7 @@ Biblioteka zamienia liczb na Słowa
 
 ## example
 
-
+#
 <?php
 include 'konwerter.php';
 $konwerter = new Konwerter();
