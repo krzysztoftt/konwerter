@@ -18,13 +18,13 @@ public $data = [
 
 		];
 
-		 public function convert20($int){
+		 private function convert20($int){
 
 			return $this->data[$int];
 										}
 
 
-		 public function convert99($int){
+		 private function convert99($int){
 
 				$modulo=0;
                 $decimal=0;
@@ -35,7 +35,7 @@ public $data = [
 					return $this->data[$decimal] . ' ' . $this->data[$modulo];
 				} 
   		         }
-  		         public function convert999($int){
+  		         private function convert999($int){
   					
   					$decimal= $int%100;
   					
@@ -45,7 +45,7 @@ public $data = [
   					}
   				}
 
-  				public function convert_all($int){
+  				private function convert_all($int){
 
   					switch ($int) {
   						case ($int <21):
@@ -67,7 +67,7 @@ public $data = [
 
   				}
 
-  				public function m($int){
+  				private function m($int){
 
 				
 				$str='';
@@ -92,7 +92,7 @@ public $data = [
 
 			}
 
-			public function t($int){
+			private function t($int){
 
 				
 				$str='';
@@ -121,7 +121,7 @@ public $data = [
 
 
 
-			function change($int){
+			private function change($int){
 
 
                $m =  intval($int / 1000000);
@@ -140,7 +140,7 @@ public $data = [
 			}
 
 
-			function konwert($int){
+		public	function konwert($int){
                   
                   if (!is_int($int)) { return "Error int";} elseif ($int==0) {
                   	return "ZERO";
