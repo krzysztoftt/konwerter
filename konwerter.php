@@ -109,6 +109,8 @@ public $data = [
 							$str= 'TYSIĄCE';
 							break;	
 					case ($int>4):
+
+							
 							$str = 'TYSIĘCY';
 						break;
 				}
@@ -128,12 +130,12 @@ public $data = [
                $int = $int % 1000;
                $s = intval($int / 100);
                $int = $int % 100;
-               $dz = intval($int / 10);
-               $j =  $int % 10;
+               $dz = $int;
+              // $j =  $int % 10;///
 
 
 
-				return [$m,$t,$s,$dz,$j];
+				return [$m,$t,$s,$dz];
 
 			}
 
@@ -146,8 +148,8 @@ public $data = [
 
 				$liczby = $this->change($int);
 				$str ='';
-
-				$str = $this->convert_all($liczby[0]) . ' '. $this->m($liczby[0]) . ' ' . $this->convert_all($liczby[1]) . ' '. $this->t($liczby[1]) . ' ' . $this->data[$liczby[2]*100] . ' ' . $this->data[$liczby[3]*10] . ' ' . $this->data[$liczby[4]];
+						
+				$str = $this->convert_all($liczby[0]) . ' '. $this->m($liczby[0]) . ' ' . $this->convert_all($liczby[1]) . ' '. $this->t($liczby[1]) . ' ' . $this->data[$liczby[2]*100] . ' ' . $this->convert_all($liczby[3]);
 				
 
 				return trim($str);
